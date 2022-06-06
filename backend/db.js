@@ -8,4 +8,4 @@ const pool = mysql.createPool({
 })
 exports.pool = pool
 
-// db 생성!! 
+// db 생성!!  
