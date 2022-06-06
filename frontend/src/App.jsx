@@ -4,6 +4,7 @@ import './App.css';
 import axios from 'axios';
 
 function App() {
+
   useEffect(() => {
     axios.get('/api/hi')
       .then(response => {
@@ -16,7 +17,7 @@ function App() {
     axios.get('/api/values')
       .then(response => {
         console.log('response', response)
-        setLists(response.data) 
+        setLists(response.data)
       })
   }, [])
 
@@ -43,25 +44,29 @@ function App() {
         }
       })
   }
+
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-      <div className="container">
-        {
-          lists && lists.map((list, index) => {
-            return <li key={index}>{list.value}</li>
-          })
-        }
-        <form className="example" onSubmit={submitHandler}>
-          <input type="text" placeholder="입력해주세요">
-          
-          </input>  
-          <button type="submit">
-            확인
-          </button>
-        </form>
-      </div>
+        <div className="container">
+
+          {lists && lists.map((list, index) => (
+            <li key={index}>{list.value} </li>
+          ))}
+          <br />
+            안녕하세요.
+          <form className="example" onSubmit={submitHandler}>
+            <input
+              type="text"
+              placeholder="입력해주세요..."
+              onChange={changeHandler}
+              value={value}
+            />
+            <button type="submit">확인.</button>
+          </form>
+        </div>
       </header>
     </div>
   );

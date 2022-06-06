@@ -3,9 +3,9 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     host: 'mysql',
     user: 'root',
-    password: 'minwoo',
+    password: 'YES',
     database: 'myapp'
 })
-exports.pool = pool
+exports.pool = pool;
 
 // db 생성!!  
